@@ -11,7 +11,15 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f"Connecté en tant que {bot.user}")
+    print(f"✅ Connecté en tant que {bot.user}")
+    await bot.tree.sync()
+    print("✅ Commandes slash synchronisées")
+
+# Chargement des extensions
+initial_extensions = ["cogs.tickets", "cogs.welcome"]
+for ext in initial_extensions:
+    bot.load_extension(ext)
+
 
 @bot.event
 async def on_member_join(member):
