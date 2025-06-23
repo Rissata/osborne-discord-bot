@@ -69,7 +69,8 @@ class TicketSelect(discord.ui.Select):
         )
 
 async def setup(bot):
-    print("🔁 Chargement du module Ticket...")
+    print("📩 Chargement du module Ticket...")
     ticket_cog = Ticket(bot)
     await bot.add_cog(ticket_cog)
-    await ticket_cog.send_recruitment_message()
+    await ticket_cog.send_recruitment_message()  # Appel direct ici
+
