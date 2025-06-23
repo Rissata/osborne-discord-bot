@@ -46,13 +46,13 @@ class Ticket(commands.Cog):
 
         if choice == "ore":
             category_name = "Osborne Real Estate - équipe"
-            role_ids = [111, 222]  # Remplace par les bons rôles
+            role_ids = [1386443996842426570, 1386457473145110688]  # Remplace par les bons rôles
         elif choice == "bahamas":
             category_name = "Bahamas - Équipe"
-            role_ids = [333, 444]
+            role_ids = [1386443996871528582, 1386444000239812718]
         elif choice == "partenariats":
             category_name = "Relation Externes"
-            role_ids = [555, 666]
+            role_ids = [1386443997731360779, 1386460894233624596]
         else:
             await interaction.response.send_message("❌ Erreur dans la sélection.", ephemeral=True)
             return
