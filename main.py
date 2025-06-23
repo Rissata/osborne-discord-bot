@@ -13,6 +13,18 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 async def on_ready():
     print(f"Connecté en tant que {bot.user}")
 
-# À compléter avec les commandes et les systèmes de tickets
+@bot.event
+async def on_member_join(member):
+    guild = member.guild
+
+    role_names = ["Citoyens", "-----Citoyens-----"]
+    
+    for role_name in role_names:
+        role = discord.utils.get(guild.roles, name=role_name)
+        if role:
+            await member.add_roles(role)
+        else:
+            print(f"⚠️ Rôle '{role_name}' non trouvé sur le serveur.")
+
 
 bot.run(os.getenv("DISCORD_TOKEN"))
