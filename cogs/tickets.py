@@ -9,9 +9,8 @@ class Ticket(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    @commands.Cog.listener()
-async def on_ready(self):
-    print("✅ Module Ticket prêt.")
+    async def on_ready(self):
+        print("✅ Module Ticket prêt.")
 
     channel = self.bot.get_channel(RECRUTEMENT_CHANNEL_ID)
     if channel:
