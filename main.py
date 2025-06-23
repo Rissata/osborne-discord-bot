@@ -17,21 +17,18 @@ class MyBot(commands.Bot):
     async def setup_hook(self):
         for ext in self.initial_extensions:
             await self.load_extension(ext)
-        print("✅ Extensions chargées")
+            print(f"✅ Extension chargée : {ext}")
+
+        print("✅ Toutes les extensions sont chargées.")
 
     async def on_ready(self):
-        print(f"🤖 Connecté en tant que {self.user}")
+        print(f"🟢 Connecté en tant que {self.user}")
         await self.tree.sync()
         print("✅ Commandes slash synchronisées")
 
-        # Envoi du message de recrutement automatiquement
-        from cogs.tickets import Ticket
-        ticket_cog = Ticket(self)
-        await ticket_cog.send_recruitment_message()
-
     async def on_member_join(self, member):
         guild = member.guild
-        role_names = ["Citoyens", "------Citoyens-----"]
+        role_names = ["Citoyens", "-----Citoyens-----"]
         for role_name in role_names:
             role = discord.utils.get(guild.roles, name=role_name)
             if role:
