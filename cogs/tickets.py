@@ -8,7 +8,7 @@ class Ticket(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-   async def send_recruitment_message(self):
+    async def send_recruitment_message(self):
     channel = self.bot.get_channel(RECRUTEMENT_CHANNEL_ID)
     
     if not channel:
