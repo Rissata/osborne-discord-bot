@@ -18,7 +18,7 @@ async def on_ready():
 # Chargement des extensions
 initial_extensions = ["cogs.tickets", "cogs.welcome"]
 for ext in initial_extensions:
-    bot.load_extension(ext)
+    await bot.load_extension(ext)
 
 
 @bot.event
