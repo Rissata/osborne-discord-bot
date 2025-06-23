@@ -15,16 +15,16 @@ class Welcome(commands.Cog):
         channel = self.bot.get_channel(channel_id)
         if channel:
             embed = discord.Embed(
-                title="Bienvenue sur le serveur du Groupe Osborne",
+                title="# Bienvenue sur le serveur du Groupe Osborne",
                 description=(
-                    "🎩 Le Groupe Osborne regroupe nos entreprises civiles et institutions familiales.\n\n"
-                    "🧾 Vous trouverez ici des services de qualité, une équipe compétente et une vision ambitieuse pour San Andreas.\n"
-                    "📬 En cas de besoin, utilisez les tickets correspondants à vos demandes."
+                    "## 🎩 Le Groupe Osborne regroupe nos entreprises civiles et institutions familiales.\n\n"
+                    "## 🧾 Vous trouverez ici des services de qualité, une équipe compétente et une vision ambitieuse pour San Andreas.\n"
+                    "## 📬 En cas de besoin, utilisez les tickets correspondants à vos demandes."
                 ),
                 color=0x3498db
             )
             embed.set_image(url=banner_url)
-            embed.set_footer(text="Nous vous souhaitons la bienvenue.")
+            embed.set_footer(text="### Nous vous souhaitons la bienvenue.")
 
             await channel.purge(limit=10)
             await channel.send(embed=embed)
