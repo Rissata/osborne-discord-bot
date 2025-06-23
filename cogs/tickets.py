@@ -65,3 +65,7 @@ class TicketSelect(discord.ui.Select):
             f"🎟️ Création de ton ticket dans la catégorie **{category_name}** en cours...", ephemeral=True
         )
         # Tu peux ajouter ici la logique de création du ticket
+
+async def setup(bot):
+    await bot.add_cog(Ticket(bot))
+
